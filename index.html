@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ghulam Mustafa — Web Developer</title>
+  <meta name="description" content="Portfolio of Ghulam Mustafa — web developer. Clean, fast, and professional websites." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; --text:#0f1720; --muted:#6b7280; --accent-start:#7c3aed; --accent-end:#f59e0b; --accent:#7c3aed; --card:#f8fafc; --glass:rgba(255,255,255,0.6);
+      --radius:14px; --max-width:1100px;
+    }
+    [data-theme="dark"]{ --bg:#0b1220; --text:#e6eef6; --muted:#9aa6b2; --accent:#7ee3d9; --card:#071027; --glass:rgba(255,255,255,0.03); }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; line-height:1.5;
+      -webkit-text-size-adjust:100%;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:32px}
+
+    /* HEADER */
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent-start),var(--accent-end));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav{display:flex;gap:14px;align-items:center}
+    a.btn{padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent-start),var(--accent-end));color:var(--bg)}
+    .btn-ghost{background:transparent;color:var(--muted);border:1px solid transparent}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:32px 0}
+    .hero h1{font-size:34px;margin:0}
+    .hero p{color:var(--muted);margin-top:12px}
+    .skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .chip{background:var(--card);padding:8px 10px;border-radius:999px;font-weight:600;color:var(--text);box-shadow:0 6px 20px var(--glass)}
+
+    /* Card */
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px var(--glass)}
+
+    /* Project grid */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:18px}
+    .project{border-radius:12px;overflow:hidden;background:linear-gradient(180deg,rgba(0,0,0,0.03),transparent);display:flex;flex-direction:column}
+    .project img{width:100%;height:160px;object-fit:cover}
+    .project-body{padding:12px}
+    .project h3{margin:0;font-size:16px}
+    .project p{color:var(--muted);font-size:14px;margin:8px 0}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .tags{display:flex;gap:6px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:transparent;border:1px dashed var(--glass);color:var(--muted)}
+
+    /* Case study */
+    .case{margin-top:20px}
+    .case h2{margin:6px 0}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:18px}
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255, 255, 255, 0.955);margin-top:8px;background:transparent;color:var(--text)}
+    form button{margin-top:10px}
+
+    footer{padding:24px 0;color:var(--muted);font-size:13px}
+
+    /* small screens */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    /* accessibility focus */
+    a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(14,165,164,0.18);outline-offset:3px}
+    /* Dark theme override */
+  body {
+    background:#000 !important;
+    color:#fff !important;
+  }
+  .card {
+    background:#0d0d0d !important;
+    color:#fff !important;
+  }
+  /* Animations */
+  .fade-in { opacity:0; transform:translateY(20px); animation:fadeUp 0.8s forwards; }
+  @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+  .slide-in { opacity:0; transform:translateX(-20px); animation:slideIn 1s forwards; }
+  @keyframes slideIn { to { opacity:1; transform:translateX(0); } }
+  .hero-zoom { opacity:0; transform:scale(0.95); animation:zoomIn 1s forwards; }
+  @keyframes zoomIn { to { opacity:1; transform:scale(1); } }
+  /* Responsive improvements */
+  img { max-width:100%; height:auto; }
+  .container { width:90%; max-width:1100px; margin:auto; }
+  @media(max-width:768px){ header, section { padding:20px 10px; }
+    h1 { font-size:1.9rem; }
+    h2 { font-size:1.6rem; }
+    .card { padding:15px; }
+  }
+  @media(max-width:480px){ h1 { font-size:1.6rem; }
+    p { font-size:0.9rem; }
+  }
+
+  /* Smooth pop animations */
+  .pop { opacity:0; transform:scale(1.92); animation:popIn 0.7s forwards ease-out; }
+  @keyframes popIn { to { opacity:1; transform:scale(1); } }
+
+  /* Soft fade */
+  .soft-fade { opacity:0; animation:softFadeIn 1s forwards; }
+  @keyframes softFadeIn { to { opacity:1; } }
+</style>
+</head>
+<body data-theme="light">
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">GM</div>
+        <div>
+          <div style="font-weight:800">Ghulam Mustafa</div>
+          <div style="font-size:12px;color:var(--muted)">Web Developer — Frontend &amp; Small Apps</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects" class="btn">Projects</a>
+        <a href="#case-studies" class="btn">Case Study</a>
+        <a href="#contact" class="btn">Contact</a>
+        <button id="themeToggle" aria-label="Toggle theme" class="btn btn-ghost">Toggle</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Clean, fast, and usable websites that help small businesses and creators sell &amp; grow.</h1>
+          <p>I build clean, fast, and modern websites — turning ideas into user-friendly digital experiences.</p>
+          <div class="skills">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">React</span>
+            <span class="chip">Node</span>
+            <span class="chip">Git</span>
+          </div>
+
+          <div style="margin-top:20px;display:flex;gap:12px;align-items:center">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn">Hire Me</a>
+          </div>
+
+          <div style="margin-top:28px;" class="card">
+            <strong>Quick pitch:</strong>
+            <p style="margin:8px 0;color:var(--muted)">I deliver production-ready websites with clear code and fast performance. I’m open to freelance, contract, and junior developer roles.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a href="#contact" class="btn">Let's talk</a>
+              <a href="#" class="btn">Download CV (PDF)</a>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <img src="mustafa_cropped.jpg" alt="Ghulam Mustafa" style="width:100%;height:300px;object-fit:cover;border-radius:10px;margin-bottom:12px">
+            <h3 style="margin-top:0">Contact</h3>
+            <p style="color:var(--muted)">Email: <a href="mailto:gmustafam78@gmail.com">gmustafam78@gmail.com</a></p>
+            <p style="color:var(--muted)">Location: Larkana, Pakistan</p>
+            <p style="color:var(--muted)">WhatsApp: <a href="tel:+923157966027">+92 315 7966027</a></p>
+            <div style="margin-top:12px">
+              <strong>Availability:</strong>
+              <p style="margin:6px 0;color:var(--muted)">Open for remote and local junior / freelance roles</p>
+            </div>
+            <div style="margin-top:12px">
+              <strong>Top strengths</strong>
+              <ul style="margin:8px 0 0 18px;color:var(--muted)">
+                <li>Fast learner — picks up frameworks quickly</li>
+                <li>Attention to detail — UI, spacing, accessibility</li>
+                <li>Reliable communication — regular updates</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects">
+        <h2 style="margin-bottom:6px">Selected Projects</h2>
+        <p style="color:var(--muted);margin-top:0">Only polished projects that show real value. Click any project to view details.</p>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Project 1 -->
+          <article class="project" data-title="Restaurant Landing" data-desc="Responsive landing page for a small restaurant. Includes menu, contact, and gallery." data-tech="HTML,CSS,JS" data-live="#" data-git="#">
+            <img src="https://images.unsplash.com/photo-1541542684-5f4d8f3b1b9b?auto=format&fit=crop&w=800&q=60" alt="Restaurant demo">
+            <div class="project-body">
+              <h3>Restaurant Landing</h3>
+              <p>Responsive landing page with hero, menu, and contact form.</p>
+              <div class="meta">
+                <div class="tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                </div>
+                <div style="display:flex;gap:8px">
+                  <button onclick="openCase(this)" class="btn">Details</button>
+                  <a href="#" class="btn">Live</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project" data-title="Task Manager" data-desc="Simple todo & task manager with localStorage. Shows CRUD and responsive UX." data-tech="HTML,JS,LocalStorage" data-live="#" data-git="#">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60" alt="Task app demo">
+            <div class="project-body">
+              <h3>Task Manager</h3>
+              <p>Small web app demonstrating state management and storage.</p>
+              <div class="meta">
+                <div class="tags">
+                  <span class="tag">JavaScript</span>
+                </div>
+                <div style="display:flex;gap:8px">
+                  <button onclick="openCase(this)" class="btn">Details</button>
+                  <a href="#" class="btn">Live</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project" data-title="E‑shop Prototype" data-desc="Prototype for a small e-commerce site. Checkout flow and product cards." data-tech="HTML,CSS,JS" data-live="#" data-git="#">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=60" alt="Eshop demo">
+            <div class="project-body">
+              <h3>E-shop Prototype</h3>
+              <p>Design-forward product grid and simple checkout interaction.</p>
+              <div class="meta">
+                <div class="tags"><span class="tag">Frontend</span></div>
+                <div style="display:flex;gap:8px">
+                  <button onclick="openCase(this)" class="btn">Details</button>
+                  <a href="#" class="btn">Live</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="case-studies" class="case">
+        <h2>Featured Case Study</h2>
+        <div class="card">
+          <h3>Restaurant Landing — Case Study</h3>
+          <p style="color:var(--muted)">Problem: Local restaurant needed a simple page to show menu & allow bookings. Solution: Fast single-page site with responsive layout, accessible markup, and an email contact form. Outcome: Faster page, easy to edit content, higher contact conversions.</p>
+          <p style="color:var(--muted);margin-top:8px">Tech used: HTML, CSS, JavaScript. My role: Design, development, deployment.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <div>
+            <p style="color:var(--muted)">Interested in working together? Drop a short message and I’ll reply within 24–48 hours.</p>
+            <form id="contactForm" class="card" onsubmit="submitForm(event)">
+              <label>Name</label>
+              <input type="text" id="name" required placeholder="Your name">
+              <label>Email</label>
+              <input type="email" id="email" required placeholder="you@example.com">
+              <label>Message</label>
+              <textarea id="message" rows="6" placeholder="Briefly describe the project"></textarea>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </div>
+
+          <aside class="card">
+            <h3>Other ways to reach me</h3>
+            <p style="color:var(--muted)">WhatsApp: +92 3157966027</p>
+            <p style="color:var(--muted)">GitHub: <a href="#">github.com/yourname</a></p>
+            <p style="color:var(--muted)">LinkedIn: <a href="#">linkedin.com/in/yourname</a></p>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <div>&copy; <span id="year"></span> Ghulam Mustafa — Built with care.</div>
+        <div style="color:var(--muted)">Made for clients and recruiters — lightweight and fast.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Utilities
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', ()=>{
+      const root = document.body;
+      const current = root.getAttribute('data-theme') || 'light';
+      const next = current === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+    });
+
+    // Simple contact handler (replace with form backend)
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email) return alert('Please provide name and email.');
+      // placeholder: send using EmailJS/Firebase/Netlify forms or server endpoint
+      alert('Message sent (demo). Replace this with a real backend endpoint.');
+      e.target.reset();
+    }
+
+    // Open case study modal (simple alert for demo)
+    function openCase(btn){
+      const card = btn.closest('.project');
+      const title = card.getAttribute('data-title');
+      const desc = card.getAttribute('data-desc');
+      const tech = card.getAttribute('data-tech');
+      alert(title + '\n\n' + desc + '\n\nTech: ' + tech);
+    }
+
+    // Accessibility: keyboard focus for project buttons
+    document.querySelectorAll('.project button').forEach(b=>b.setAttribute('tabindex',0));
+  </script>
+</body>
+</html>
