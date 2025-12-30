@@ -150,7 +150,7 @@
 
           <div style="margin-top:28px;" class="card">
             <strong>Quick pitch:</strong>
-            <p style="margin:8px 0;color:var(--muted)">I deliver production-ready websites with clear code and fast performance. I’m open to freelance, contract, and junior developer roles.</p>
+            <p style="margin:8px 0;color:var(--muted)">I deliver production-ready websites with clear code and fast performance. I'm open to freelance, contract, and junior developer roles.</p>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
               <a href="#contact" class="btn">Let's talk</a>
               <a href="#" class="btn">Download CV (PDF)</a>
@@ -186,7 +186,26 @@
         <p style="color:var(--muted);margin-top:0">Only polished projects that show real value. Click any project to view details.</p>
 
         <div class="projects-grid" id="projectsGrid">
-          <!-- Project 1 -->
+          <!-- Project 1: YOUR TODO LIST PROJECT -->
+          <article class="project" data-title="Todo List App" data-desc="Interactive todo list application with add, delete, and mark complete features. Built with vanilla JavaScript and localStorage for data persistence." data-tech="HTML,CSS,JavaScript,LocalStorage" data-live="https://todolistpr1.netlify.app" data-git="#">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJLMBw7nYnX6cZ57Okws4BV6PxLXEffT5WgQ&s" alt="Todo List App">
+            <div class="project-body">
+              <h3>Todo List App</h3>
+              <p>Full-featured task manager with localStorage persistence and clean UI.</p>
+              <div class="meta">
+                <div class="tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">LocalStorage</span>
+                </div>
+                <div style="display:flex;gap:8px">
+                  <button onclick="openCase(this)" class="btn">Details</button>
+                  <a href="https://todolistpr1.netlify.app" target="_blank" class="btn">Live</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
           <article class="project" data-title="Restaurant Landing" data-desc="Responsive landing page for a small restaurant. Includes menu, contact, and gallery." data-tech="HTML,CSS,JS" data-live="#" data-git="#">
             <img src="https://images.unsplash.com/photo-1541542684-5f4d8f3b1b9b?auto=format&fit=crop&w=800&q=60" alt="Restaurant demo">
             <div class="project-body">
@@ -205,7 +224,7 @@
             </div>
           </article>
 
-          <!-- Project 2 -->
+          <!-- Project 3 -->
           <article class="project" data-title="Task Manager" data-desc="Simple todo & task manager with localStorage. Shows CRUD and responsive UX." data-tech="HTML,JS,LocalStorage" data-live="#" data-git="#">
             <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60" alt="Task app demo">
             <div class="project-body">
@@ -223,7 +242,7 @@
             </div>
           </article>
 
-          <!-- Project 3 -->
+          <!-- Project 4 -->
           <article class="project" data-title="E‑shop Prototype" data-desc="Prototype for a small e-commerce site. Checkout flow and product cards." data-tech="HTML,CSS,JS" data-live="#" data-git="#">
             <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=60" alt="Eshop demo">
             <div class="project-body">
@@ -255,7 +274,7 @@
         <h2>Contact</h2>
         <div class="contact-grid">
           <div>
-            <p style="color:var(--muted)">Interested in working together? Drop a short message and I’ll reply within 24–48 hours.</p>
+            <p style="color:var(--muted)">Interested in working together? Drop a short message and I'll reply within 24–48 hours.</p>
             <form id="contactForm" class="card" onsubmit="submitForm(event)">
               <label>Name</label>
               <input type="text" id="name" required placeholder="Your name">
@@ -325,4 +344,3 @@
   </script>
 </body>
 </html>
-
